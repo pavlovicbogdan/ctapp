@@ -1,0 +1,8 @@
+
+i {
+    color: gray;
+}
+i:hover {
+    color: black;
+    cursor: pointer;
+}
