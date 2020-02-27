@@ -38,17 +38,18 @@ class Table extends Component {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify({
-                name: exam.name,
-                contact: exam.contact,
-                comment: exam.comment,
-                exType: exam.exType,
-                exName: exam.exName,
-                exContrast: exam.exContrast,
-                exDate: exam.exDate,
-                exTime: exam.exTime,
-                exDoctor: exam.exDoctor
-            })
+            // body: JSON.stringify({
+            //     name: exam.name,
+            //     contact: exam.contact,
+            //     comment: exam.comment,
+            //     exType: exam.exType,
+            //     exName: exam.exName,
+            //     exContrast: exam.exContrast,
+            //     exDate: exam.exDate,
+            //     exTime: exam.exTime,
+            //     exDoctor: exam.exDoctor
+            // })
+            body: JSON.stringify(exam)
         })
             .then(res => res.json())
             .then(data => console.log(data))
@@ -68,7 +69,6 @@ class Table extends Component {
 
     editExam(exam) {
         console.log(exam);
-
     }
 
     componentDidMount() {
@@ -88,8 +88,7 @@ class Table extends Component {
                     <td>{ex.exDate}</td>
                     <td>{ex.exTime}</td>
                     <td>{ex.exDoctor}</td>
-                    {/* <td><i className="fa fa-edit" onClick={() => this.editExam(ex)}></i></td> */}
-                    <td><ExModal icon="fa fa-edit" type="edit" exam={ex} /></td>
+                    <td><ExModal icon="fa fa-edit" type="edit" exam={ex} editExam={this.editExam} /></td>
                     <td><i className="fa fa-trash" onClick={() => this.deleteExam(ex.id)}></i></td>
                 </tr>
             )
