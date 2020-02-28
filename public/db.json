@@ -13,64 +13,52 @@
       "exDoctor": "dr Dragan Dragic"
     },
     {
-      "id": 4,
       "name": "Daca",
       "contact": "063-123-456",
       "comment": "bla bla bla",
       "exType": "Radiology",
-      "exName": "CT Head",
+      "exName": "CT Abdomen",
       "exContrast": true,
       "exDate": "13/05",
       "exTime": "12:00",
-      "exDoctor": "dr Dragan Dragic"
+      "exDoctor": "dr Dragan Dragic",
+      "id": 4
     },
     {
-      "id": 5,
-      "name": "Jovana",
-      "contact": "063-123-456",
-      "comment": "bla bla bla",
+      "name": "Stevan",
+      "contact": "987654",
+      "comment": "editovan komentr",
       "exType": "Radiology",
-      "exName": "CT Head",
-      "exContrast": true,
+      "exName": "US Vessels",
+      "exContrast": false,
       "exDate": "12/05",
-      "exTime": "12:00",
-      "exDoctor": "dr Dragan Dragic"
+      "exTime": "12:30",
+      "exDoctor": "dr Dragan Dragic",
+      "id": 10
     },
     {
-      "name": "Petar",
-      "contact": "066-255-212",
-      "comment": "ovo je helo world",
-      "exType": "Intern",
+      "name": "petar",
+      "contact": "123456",
+      "comment": "komentar",
+      "exType": "Radiology",
       "exName": "US Vessels",
+      "exContrast": false,
+      "exDate": "13/05",
+      "exTime": "12:00",
+      "exDoctor": "dr Mile Milenkovic",
+      "id": 11
+    },
+    {
+      "name": "mladen",
+      "contact": "654321",
+      "comment": "comment",
+      "exType": "Intern",
+      "exName": "CT Abdomen",
       "exContrast": false,
       "exDate": "14/05",
       "exTime": "12:30",
       "exDoctor": "dr Mile Milenkovic",
-      "id": 6
-    },
-    {
-      "name": "Bogdan",
-      "contact": "066123456",
-      "comment": "novi komentar",
-      "exType": "Intern",
-      "exName": "US Vessels",
-      "exContrast": false,
-      "exDate": "14/05",
-      "exTime": "12:30",
-      "exDoctor": "dr Petar Petrovic",
-      "id": 7
-    },
-    {
-      "name": "Nebojsa",
-      "contact": "031454545",
-      "comment": "",
-      "exType": "Neurology",
-      "exName": "US Vessels",
-      "exContrast": false,
-      "exDate": "13/05",
-      "exTime": "12:30",
-      "exDoctor": "dr Petar Petrovic",
-      "id": 8
+      "id": 12
     }
   ]
 }

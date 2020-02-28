@@ -11,12 +11,6 @@ class Table extends Component {
         };
     }
 
-    // deleteExamHandler = (id) => {
-    //     if (window.confirm("Do you really want to delete exam?")) {
-    //         this.props.deleteExam(id);
-    //     }
-    // };
-
     // fetching exams from database
 
     getExams() {
@@ -38,17 +32,6 @@ class Table extends Component {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
-            // body: JSON.stringify({
-            //     name: exam.name,
-            //     contact: exam.contact,
-            //     comment: exam.comment,
-            //     exType: exam.exType,
-            //     exName: exam.exName,
-            //     exContrast: exam.exContrast,
-            //     exDate: exam.exDate,
-            //     exTime: exam.exTime,
-            //     exDoctor: exam.exDoctor
-            // })
             body: JSON.stringify(exam)
         })
             .then(res => res.json())
@@ -68,7 +51,15 @@ class Table extends Component {
     };
 
     editExam(exam) {
-        console.log(exam);
+        fetch(`http://localhost:4000/exams/${exam.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(exam)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
     }
 
     componentDidMount() {
