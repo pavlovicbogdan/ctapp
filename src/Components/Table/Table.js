@@ -50,6 +50,8 @@ class Table extends Component {
         }
     };
 
+    // editing exam in database
+
     editExam(exam) {
         fetch(`http://localhost:4000/exams/${exam.id}`, {
             method: 'PUT',
@@ -67,29 +69,55 @@ class Table extends Component {
     }
 
     render() {
+        const zeroFormat = (date) => {
+            if (date < 10) {
+                return `0${date}`;
+            }
+            return date;
+        }
+
+        // TODO map function need value to return
+
         const exams = this.state.exams.map((ex, index) => {
-            return (
-                <tr key={ex.id}>
-                    <th scope="row">{ex.id}</th>
-                    <td>{ex.name}</td>
-                    <td>{ex.contact}</td>
-                    <td>{ex.comment}</td>
-                    <td>{ex.exName}</td>
-                    <td>{ex.exContrast ? 'Yes' : 'No'}</td>
-                    <td>{ex.exDate}</td>
-                    <td>{ex.exTime}</td>
-                    <td>{ex.exDoctor}</td>
-                    <td><ExModal icon="fa fa-edit" type="edit" exam={ex} editExam={this.editExam} /></td>
-                    <td><i className="fa fa-trash" onClick={() => this.deleteExam(ex.id)}></i></td>
-                </tr>
-            )
+            const selectedDate = new Date(this.props.date);
+            const date = new Date(ex.exDate);
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+
+
+            if (day === selectedDate.getDate() && month === selectedDate.getMonth() + 1) {
+                return (
+                    <tr key={ex.id}>
+                        <th scope="row">{ex.id}</th>
+                        <td>{ex.name}</td>
+                        <td>{ex.contact}</td>
+                        <td>{ex.comment}</td>
+                        <td>{ex.exName}</td>
+                        <td>{ex.exContrast ? 'Yes' : 'No'}</td>
+                        <td>{`${zeroFormat(day)}. ${zeroFormat(month)}. ${year}.`}</td>
+                        <td>{`${zeroFormat(date.getHours())} : ${zeroFormat(date.getMinutes())}`}</td>
+                        <td>{ex.exDoctor}</td>
+                        <td><ExModal
+                            icon="fa fa-edit"
+                            type="edit"
+                            exam={ex}
+                            editExam={this.editExam}
+                            contrast={ex.exContrast ? false : ex.exName.includes('CT') ? false : true}
+                            date={date} /></td>
+                        <td><i className="fa fa-trash" onClick={() => this.deleteExam(ex.id)}></i></td>
+                    </tr>
+                )
+            }
+            
+            return;
         });
 
         return (
             <table className="table table-hover" >
                 <thead>
                     <tr>
-                        <th scope="col"><ExModal addExam={this.addExam} icon="fa fa-user-plus" type="add" /></th>
+                        <th scope="col"><ExModal addExam={this.addExam} icon="fa fa-user-plus" type="add" contrast={true} date={new Date()} /></th>
                         <th scope="col">Full name</th>
                         <th scope="col">Contact</th>
                         <th scope="col">Comment</th>

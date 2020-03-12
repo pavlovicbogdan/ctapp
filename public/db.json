@@ -1,64 +1,92 @@
 {
   "exams": [
     {
-      "id": 1,
-      "name": "Nikola",
-      "contact": "063-123-456",
-      "comment": "bla bla bla",
-      "exType": "Radiology",
-      "exName": "CT Head",
-      "exContrast": true,
-      "exDate": "14/05",
-      "exTime": "12:00",
-      "exDoctor": "dr Dragan Dragic"
-    },
-    {
-      "name": "Daca",
-      "contact": "063-123-456",
-      "comment": "bla bla bla",
-      "exType": "Radiology",
-      "exName": "CT Abdomen",
-      "exContrast": true,
-      "exDate": "13/05",
-      "exTime": "12:00",
-      "exDoctor": "dr Dragan Dragic",
-      "id": 4
-    },
-    {
-      "name": "Stevan",
-      "contact": "987654",
-      "comment": "editovan komentr",
-      "exType": "Radiology",
-      "exName": "US Vessels",
-      "exContrast": false,
-      "exDate": "12/05",
-      "exTime": "12:30",
-      "exDoctor": "dr Dragan Dragic",
-      "id": 10
-    },
-    {
-      "name": "petar",
+      "name": "bogdan",
       "contact": "123456",
       "comment": "komentar",
       "exType": "Radiology",
-      "exName": "US Vessels",
-      "exContrast": false,
-      "exDate": "13/05",
-      "exTime": "12:00",
+      "exName": "CT Abdomen",
+      "exContrast": true,
+      "exDate": "2020-03-20T14:00:00.000Z",
       "exDoctor": "dr Mile Milenkovic",
-      "id": 11
+      "id": 1
     },
     {
-      "name": "mladen",
-      "contact": "654321",
-      "comment": "comment",
+      "name": "dragan",
+      "contact": "123456",
+      "comment": "koment koment",
       "exType": "Intern",
+      "exName": "US Abdomen",
+      "exContrast": false,
+      "exDate": "2020-03-20T14:30:00.000Z",
+      "exDoctor": "dr Mile Milenkovic",
+      "id": 2
+    },
+    {
+      "name": "goran",
+      "contact": "321321",
+      "comment": "kom okm kom",
+      "exType": "Radiology",
+      "exName": "US Vessels",
+      "exContrast": false,
+      "exDate": "2020-03-20T14:30:00.000Z",
+      "exDoctor": "dr Petar Petrovic",
+      "id": 3
+    },
+    {
+      "name": "pera",
+      "contact": "123123",
+      "comment": "",
+      "exType": "Radiology",
       "exName": "CT Abdomen",
       "exContrast": false,
-      "exDate": "14/05",
-      "exTime": "12:30",
+      "exDate": "2020-04-01T13:09:18.000Z",
       "exDoctor": "dr Mile Milenkovic",
-      "id": 12
+      "id": 4
+    },
+    {
+      "name": "petar",
+      "contact": "123123123",
+      "comment": "bla bla bla",
+      "exType": "Neurology",
+      "exName": "US Vessels",
+      "exContrast": false,
+      "exDate": "2020-03-12T15:00:00.036Z",
+      "exDoctor": "dr Dragan Dragic",
+      "id": 5
+    },
+    {
+      "name": "pera peric",
+      "contact": "321321",
+      "comment": "njanja",
+      "exType": "Intern",
+      "exName": "US Vessels",
+      "exContrast": false,
+      "exDate": "2020-03-13T15:00:00.000Z",
+      "exDoctor": "dr Mile Milenkovic",
+      "id": 6
+    },
+    {
+      "name": "nevena",
+      "contact": "123123",
+      "comment": "hglhgl",
+      "exType": "Radiology",
+      "exName": "US Vessels",
+      "exContrast": false,
+      "exDate": "2020-03-12T15:30:00.629Z",
+      "exDoctor": "dr Petar Petrovic",
+      "id": 7
+    },
+    {
+      "name": "mitar",
+      "contact": "456456",
+      "comment": "",
+      "exType": "Radiology",
+      "exName": "US Vessels",
+      "exContrast": false,
+      "exDate": "2020-03-12T15:45:00.153Z",
+      "exDoctor": "dr Mile Milenkovic",
+      "id": 8
     }
   ]
 }

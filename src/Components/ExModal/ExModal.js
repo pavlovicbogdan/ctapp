@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import './ExModal.css';
 
 const ExModal = (props) => {
     const [show, setShow] = useState(false);
-    const [hideContrast, setHideContrast] = useState(true);
+    const [hideContrast, setHideContrast] = useState(props.contrast);
+    const [date, setDate] = useState(props.date);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -19,10 +22,10 @@ const ExModal = (props) => {
             exType: event.target.exType.value,
             exName: event.target.exName.value,
             exContrast: event.target.exContrast ? event.target.exContrast.checked : false,
-            exDate: event.target.exDate.value,
-            exTime: event.target.exTime.value,
+            exDate: date,
             exDoctor: event.target.exDoctor.value
         }
+
 
         if (props.type === 'add') {
             props.addExam(exam);
@@ -36,44 +39,13 @@ const ExModal = (props) => {
     };
 
     const hideContrasHandler = (event) => {
-        console.log(event.target.value);
-        
+
         if (event.target.value.includes("CT")) {
             setHideContrast(false);
         } else {
             setHideContrast(true);
         }
-        console.log(hideContrast);
-        
     };
-
-    // TODO contrast issue
-
-    let contrast = null;
-
-    if (props.type === 'add') {
-        if (!hideContrast) {
-            contrast = (
-                <Form.Group>
-                    <Form.Check id="exContrast" label="Contrast" feedback="You must agree before submitting." />
-                </Form.Group>
-            );
-        }
-    } else {
-        if (props.exam.exName.includes('CT')) {
-            contrast = (
-                <Form.Group>
-                    <Form.Check id="exContrast" label="Contrast" defaultChecked={props.exam.exContrast} feedback="You must agree before submitting." />
-                </Form.Group>
-            );
-        } else if (!hideContrast) {
-            contrast = (
-                <Form.Group>
-                    <Form.Check id="exContrast" label="Contrast" feedback="You must agree before submitting." />
-                </Form.Group>
-            );
-        }
-    }
 
     return (
         <>
@@ -113,37 +85,32 @@ const ExModal = (props) => {
                                 <option value="CT Head">CT Head</option>
                                 <option value="CT Abdomen">CT Abdomen</option>
                                 <option value="US Vessels">US Vessels</option>
+                                <option value="US Abdomen">US Abdomen</option>
                             </Form.Control>
                         </Form.Group>
-                        {/* {hideContrast ? null :
+                        {hideContrast ? null :
                             <Form.Group>
                                 <Form.Check
                                     id="exContrast"
                                     label="Contrast"
                                     feedback="You must agree before submitting."
-                                    defaultChecked={props.exam.exContrast}
+                                    defaultChecked={props.type === 'add' ? null : props.exam.exContrast}
                                 />
                             </Form.Group>
-                        } */}
-                        {contrast}
+                        }
                         <Form.Group controlId="exDate">
-                            <Form.Label>Date</Form.Label>
-                            <Form.Control as="select" defaultValue={props.type === 'add' ? null : props.exam.exDate} required>
-                                <option></option>
-                                <option value="12/05">12/05</option>
-                                <option value="13/05">13/05</option>
-                                <option value="14/05">14/05</option>
-                            </Form.Control>
-                        </Form.Group>
-                        <Form.Group controlId="exTime">
-                            <Form.Label>Time</Form.Label>
-                            <Form.Control as="select" defaultValue={props.type === 'add' ? null : props.exam.exTime} required>
-                                <option></option>
-                                <option>12:00</option>
-                                <option>12:30</option>
-                                <option>13:00</option>
-                                <option>13:30</option>
-                            </Form.Control>
+                            <Form.Label>Date</Form.Label><br />
+                            <DatePicker
+                                className="form-control hover-cursor"
+                                selected={date}
+                                onChange={date => setDate(date)}
+                                minDate={new Date()}
+                                showTimeSelect
+                                timeFormat="HH:mm"
+                                timeIntervals={15}
+                                timeCaption="time"
+                                dateFormat="dd. MM. yyyy.      HH:mm"
+                            />
                         </Form.Group>
                         <Form.Group controlId="exDoctor">
                             <Form.Label>Doctor</Form.Label>
