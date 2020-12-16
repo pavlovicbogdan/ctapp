@@ -89,15 +89,15 @@ class Table extends Component {
             if (day === selectedDate.getDate() && month === selectedDate.getMonth() + 1) {
                 return (
                     <tr key={ex.id}>
-                        <th scope="row">{ex.id}</th>
+                        {/* <th scope="row">{ex.id}</th> */}
+                        <td>{`${zeroFormat(date.getHours())} : ${zeroFormat(date.getMinutes())}`}</td>
                         <td>{ex.name}</td>
                         <td>{ex.contact}</td>
-                        <td>{ex.comment}</td>
                         <td>{ex.exName}</td>
                         <td>{ex.exContrast ? 'Yes' : 'No'}</td>
-                        <td>{`${zeroFormat(day)}. ${zeroFormat(month)}. ${year}.`}</td>
-                        <td>{`${zeroFormat(date.getHours())} : ${zeroFormat(date.getMinutes())}`}</td>
                         <td>{ex.exDoctor}</td>
+                        <td>{ex.comment}</td>
+                        {/* <td>{`${zeroFormat(day)}. ${zeroFormat(month)}. ${year}.`}</td> */}
                         <td><ExModal
                             icon="fa fa-edit"
                             type="edit"

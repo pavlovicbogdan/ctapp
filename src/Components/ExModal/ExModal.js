@@ -82,10 +82,15 @@ const ExModal = (props) => {
                             <Form.Label>Examination</Form.Label>
                             <Form.Control as="select" onChange={hideContrasHandler} defaultValue={props.type === 'add' ? null : props.exam.exName} required>
                                 <option></option>
-                                <option value="CT Head">CT Head</option>
-                                <option value="CT Abdomen">CT Abdomen</option>
-                                <option value="US Vessels">US Vessels</option>
-                                <option value="US Abdomen">US Abdomen</option>
+                                <option value="RO">RO</option>
+                                <option value="CT Abdomena">CT Abdomena</option>
+                                <option value="CT Glave">CT Glave</option>
+                                <option value="CT Torax">CT Torax</option>
+                                <option value="CT Male karlice">CT Male karlice</option>
+                                <option value="CT Kicme">CT Kicme</option>
+                                <option value="CT Kolena">CT Kolena</option>
+                                <option value="CT Vrata">CT Vrata</option>
+                                <option value="CT Sinusa">CT Sinusa</option>
                             </Form.Control>
                         </Form.Group>
                         {hideContrast ? null :
@@ -116,10 +121,11 @@ const ExModal = (props) => {
                             <Form.Label>Doctor</Form.Label>
                             <Form.Control as="select" defaultValue={props.type === 'add' ? null : props.exam.exDoctor} required>
                                 <option></option>
-                                <option>dr Dragan Dragic</option>
-                                <option>dr Petar Petrovic</option>
-                                <option>dr Mile Milenkovic</option>
-                                <option>dr Jovana Jovanovic</option>
+                                <option>dr Bojana Miljkovic</option>
+                                <option>dr Dragan Radic</option>
+                                <option>dr Dragana Sopalovic</option>
+                                <option>dr Ljubica Komadina</option>
+                                <option>dr Svetlana Jovanovic Pavlovic</option>
                             </Form.Control>
                         </Form.Group>
                         <Button variant="dark" type="submit">Submit form</Button>
