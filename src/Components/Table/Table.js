@@ -90,6 +90,7 @@ class Table extends Component {
                 return (
                     <tr key={ex.id}>
                         {/* <th scope="row">{ex.id}</th> */}
+                        <td></td>
                         <td>{`${zeroFormat(date.getHours())} : ${zeroFormat(date.getMinutes())}`}</td>
                         <td>{ex.name}</td>
                         <td>{ex.contact}</td>
@@ -118,14 +119,14 @@ class Table extends Component {
                 <thead>
                     <tr>
                         <th scope="col"><ExModal addExam={this.addExam} icon="fa fa-user-plus" type="add" contrast={true} date={new Date()} /></th>
+                        <th scope="col">Time</th>
                         <th scope="col">Full name</th>
                         <th scope="col">Contact</th>
-                        <th scope="col">Comment</th>
                         <th scope="col">Examination</th>
                         <th scope="col">Contrast</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Time</th>
                         <th scope="col">Doctor</th>
+                        <th scope="col">Comment</th>
+                        {/* <th scope="col">Date</th> */}
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
